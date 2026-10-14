@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Widget Hover</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .widget {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;      /* troque por 0 se quiser cantos retos */
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .widget img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* preenche sem distorcer */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  /* imagem 2 começa invisível */
+  .widget .img2 { opacity: 0; }
+
+  /* no hover: imagem 1 some e imagem 2 aparece */
+  .widget:hover .img1,
+  .widget:active .img1 { opacity: 0; }
+
+  .widget:hover .img2,
+  .widget:active .img2 {
+    opacity: 1;
+    transform: scale(1.04);   /* zoom suave, pode remover */
+  }
+</style>
+</head>
+<body>
+  <div class="widget" tabindex="0">
+    <img class="img1" src="https://64.media.tumblr.com/9a8b29dc7bb18a7237f69578f6745a78/3f8774b0461dd9cb-bd/s1280x1920/6f8353143034891bcaeac1d3abfd7a5cef2a214a.jpg" alt="Imagem 1">
+    <img class="img2" src="https://64.media.tumblr.com/143576b87d0f97e29fc0b88a27b1050b/3f8774b0461dd9cb-ee/s1280x1920/f062a9acd996f7c5029ea5e023306eb27238f230.jpg" alt="Imagem 2">
+  </div>
+</body>
+</html>
