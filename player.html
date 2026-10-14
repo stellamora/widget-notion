@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -12,6 +13,7 @@
         margin-right:auto;
       background: linear-gradient(0deg, rgba(205,205,205,1) 0%, rgba(230,230,230,1) 30%, rgba(255,255,255,1) 100%);
       padding:5px;
+      zoom: 0.85; /* menor (1 = tamanho original) */
     }
 
 .seek_slider {
@@ -61,7 +63,7 @@ button,input,label,option,select,table,textarea,ul.tree-view{-webkit-font-smooth
 
 .window {
   padding:10px;
-  width:290px;
+  width:380px; /* mais comprido (era 290px) */
 }
 
 .window-body {
@@ -97,6 +99,7 @@ input[type=range] {
     .flex {display: flex;}
 
     #musicplayer {
+flex: 1; min-width: 0; /* pilula ocupa o espaco que sobra */
 display:block;
         float:right;
       background: linear-gradient(0deg, #F3B3C8, #FBE3EA) padding-box, linear-gradient(to top, white, #A2A2A2) border-box;
@@ -110,8 +113,8 @@ display:block;
     }
 
     .wheel {
-      display: block;
-  justify-content: center;
+      flex-shrink: 0; /* nao deixa a rodinha amassar */
+      display: flex; flex-direction: column; align-items: center; justify-content: center; /* centraliza tudo dentro da rodinha */
         margin:auto;
       background: linear-gradient(white, white) padding-box, linear-gradient(to top, white, #A2A2A2) border-box;
   border-radius: 50em;
@@ -134,6 +137,10 @@ display:block;
 -webkit-box-shadow: 1px 1px 10px 0px rgba(128,128,128,0.17) inset;
 -moz-box-shadow: 1px 1px 10px 0px rgba(128,128,128,0.17) inset;
 
+}
+table.wheelcontrols {
+  margin: 0;
+  border-spacing: 0;
 }
 th{
   width:20px;
@@ -184,6 +191,7 @@ color: #aaa;
 }
 
     .songtitle {
+        flex: 1; min-width: 0; /* titulo rola dentro da pilula */
         padding:25px; /* padding around song title */
         color:#B08A98;
       padding-bottom:0;
