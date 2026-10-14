@@ -13,7 +13,7 @@
         margin-right:auto;
       background: linear-gradient(0deg, rgba(205,205,205,1) 0%, rgba(230,230,230,1) 30%, rgba(255,255,255,1) 100%);
       padding:5px;
-      zoom: 0.85; /* menor (1 = tamanho original) */
+      zoom: 0.6; /* menor (1 = tamanho original) */
     }
 
 .seek_slider {
@@ -62,8 +62,8 @@ button,input,label,option,select,table,textarea,ul.tree-view{-webkit-font-smooth
 }
 
 .window {
-  padding:10px;
-  width:380px; /* mais comprido (era 290px) */
+  padding:16px;
+  width:470px; /* mais comprido (era 290px) */
 }
 
 .window-body {
@@ -99,13 +99,12 @@ input[type=range] {
     .flex {display: flex;}
 
     #musicplayer {
-flex: 1; min-width: 0; /* pilula ocupa o espaco que sobra */
 display:block;
         float:right;
       background: linear-gradient(0deg, #F3B3C8, #FBE3EA) padding-box, linear-gradient(to top, white, #A2A2A2) border-box;
   border-radius: 60em;
   border: 2px solid transparent;
-      margin-left:8px;
+      margin-left:15px;
       padding-left:10px;
       box-shadow: 1px 1px 10px 0px rgba(128,128,128,0.27) inset;
 -webkit-box-shadow: 1px 1px 10px 0px rgba(128,128,128,0.27) inset;
@@ -173,6 +172,15 @@ color: #aaa;
   opacity: 1;
 }
 
+.controls {
+  width: 100%;          /* ocupa a largura toda da pilula */
+  table-layout: fixed;  /* 3 colunas iguais */
+  border-spacing: 0;
+}
+.controls td {
+  text-align: center;
+}
+
 .controls button:hover {
    opacity: 1;
 
@@ -205,7 +213,7 @@ color: #aaa;
     .controls button{
       display:block;
 
-      margin-left:15px;
+      margin:0 auto; /* centraliza cada icone na sua coluna */
         font-size:14px !important; /* size of controls */
         text-align:center;
         color:#E377A0;
